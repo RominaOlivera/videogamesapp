@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Metal+Mania&family=PT+Sans&family=Staatliches&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  
+    
+  }
+  
+
+
+.fondototal{
+
+    background-image: url(./abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.png) ; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+   
+    
+
+}
+
+ p{
+    display: flex;
+   margin-top: 150px;
+   margin-bottom: 50px;
+   margin-left: 720px;
+   font-family: "Anton";
+   font-size: 350%;
+   color: white;
+   
+  
+
+}
+
+h5{
+
+   margin-left: 600px;
+padding: 10px;
+   cursor: pointer;
+   color: #03e9f4;
+   overflow-y: hidden;
+  
+}
+
+
+h5 img{
+  width: 100px;
+  height: 100px;
+  overflow-y: hidden;
+}
+
+
+.fondototal h5:hover{
+
+  transform: scale(1.2);
+  z-index: 1;
+  transition: all 500ms;
+}
+
+
+
+

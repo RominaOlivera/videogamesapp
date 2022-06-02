@@ -1,0 +1,76 @@
+.contenedores1{
+    margin: 50px;
+    /* margin-bottom: 100px; */
+    background-color: #03328483;
+    width: 650px;
+    margin-left: 400px;
+    border: 1px solid;
+    border-color: #03e9f4;
+    border-radius: 25px;
+}
+
+
+.contenedores1 h2{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+label{
+    display: inline-flex;
+    width: 200px;
+    border-radius: 5px;
+    /* font-size:20px; */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+
+}
+
+.plataforms{
+
+    display: inline-block;
+    margin-bottom: 50px;
+    font-size: 1.1em;
+    color:#010d21ea
+
+}
+
+input{
+     width: 200px;
+     font-size: 1.1em;
+}
+
+
+.genero{
+margin-bottom:20px ;
+cursor: pointer;
+
+
+}
+.volver button{
+    margin-top: 20px;
+   color: white;
+   text-decoration: none;
+   margin-bottom: 20px;
+   font-size: 15px;
+}
+
+.gene{
+    display: inline-block;
+    margin-top: -80px;
+   padding: 100px;
+    width: 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+
+}
+h6{
+font-size: 1em;
+}
+
+.gene .eliminar{
+
+    display: inline-block;
+    margin-top: 10px;
+  
+}
