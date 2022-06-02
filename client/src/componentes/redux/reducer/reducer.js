@@ -77,7 +77,7 @@ function rootReducer(state=initialState, action){
 
                     return{
                         ...state,
-                        Videogames: filterCreado
+                     Videogames: action.payload === "todos" ? state.Videogames2: filterCreado,
                     }
 
                     //ORDENAMIENTOS

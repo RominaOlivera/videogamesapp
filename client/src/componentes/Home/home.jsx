@@ -102,7 +102,7 @@ function handleOrdenPorRating(e){
 
 
               <select className='selectores' onChange={e=> handleOrdenPorNombre(e)}>
-              <option value="">Ordenar por:</option>
+              <option hidden>Ordenar por:</option>
               <option value="asc">A-Z</option>
               <option value="desc">Z-A</option>
               </select>
@@ -116,7 +116,8 @@ function handleOrdenPorRating(e){
 
 
          
-              <select className='selectores' onClick={e=> handleFilterCreado(e)}>
+              <select className='selectores' onChange={e=> handleFilterCreado(e)}>
+              <option hidden>Origen:</option> 
               <option value="todos">Todos</option>
               <option value="api">Existentes</option>
               <option value="creados">Creados</option>

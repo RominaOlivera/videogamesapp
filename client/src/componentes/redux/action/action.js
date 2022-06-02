@@ -15,7 +15,7 @@ export function getVideoGames(){
 export function getGeneros(){
     return async function(dispatch){
         var json= await axios (`${process.env.REACT_APP_VIDEOGAMES}/genres`)
-        console.log(json, "json")
+       
         return dispatch({
             type: "GET_GENEROS",
             payload: json.data
