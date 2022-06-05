@@ -15,7 +15,7 @@ export function getVideoGames(){
 export function getGeneros(){
     return async function(dispatch){
         var json= await axios (`${process.env.REACT_APP_VIDEOGAMES}/genres`)
-       
+      
         return dispatch({
             type: "GET_GENEROS",
             payload: json.data
@@ -80,6 +80,15 @@ export function filterVideoByCreados(payload){
         payload
     }
 }
+
+
+// export function borrarDetail(payload){
+//     return{
+//         type: "BORRAR_DETAIL",
+//         payload
+//     }
+// }
+
 
 export function OrdenPorNombres(payload){
     console.log(payload, "payload")

@@ -15,6 +15,10 @@ function Home() {
 
 const dispatch = useDispatch()
 const todoVideo = useSelector(state => state.Videogames)
+// console.log(todoVideo,"estado")
+
+
+
 
 //ME TRAIGO LOS GENEROS ORDENADOS
 const todoGeneros= useSelector(state=> state.Generos)
@@ -117,7 +121,7 @@ function handleOrdenPorRating(e){
 
          
               <select className='selectores' onChange={e=> handleFilterCreado(e)}>
-              <option hidden>Origen:</option> 
+              <option hidden>Origen</option> 
               <option value="todos">Todos</option>
               <option value="api">Existentes</option>
               <option value="creados">Creados</option>
@@ -137,7 +141,10 @@ function handleOrdenPorRating(e){
 
          <button className="volver"onClick={e=> {handleClick(e)}}>Volver a cargar video games</button>
       
-         <Cards actualVideo={actualVideo}/>
+         <Cards actualVideo={actualVideo}
+         errorPag= {errorPag}
+         errorPag2={errorPag2}
+         />
 
       
 

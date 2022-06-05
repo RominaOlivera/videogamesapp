@@ -1,8 +1,8 @@
 import React from 'react'
-import { postVideoGame, getGeneros } from '../redux/action/action'
-import { useDispatch, useSelector } from 'react-redux'
+import { postVideoGame, getGeneros,getVideoGames} from '../redux/action/action'
+import { useDispatch,useSelector} from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import "./createVideo.css"
 
 export default function CreateVideo() {
@@ -10,6 +10,9 @@ export default function CreateVideo() {
   const dispatch = useDispatch()
   const history = useHistory()
   const todoGeneros = useSelector(state => state.Generos)
+ const [mensaje, setmensaje] = useState(false) 
+
+ 
 
   const [input, setInput] = useState({
 
@@ -27,35 +30,37 @@ export default function CreateVideo() {
 
   const platforms = ['PC', 'PlayStation 5', 'Xbox One', 'PlayStation 4', 'Xbox Series S/X', 'Nintendo Switch', 'iOS', 'Android', 'Nintendo 3DS', 'Nintendo DS', 'Nintendo DSi', 'macOS'];
 
-
-
-
-
-//VALIDACIONES
+  
+  
+  
+  
+  //VALIDACIONES  
   function handleSubmit(e) {
     e.preventDefault()
-
-    const { name, description, released, rating, platforms, image } = input
-    if (name && description && released && rating && image && platforms.length) {
-
+    
+    const { name, description, released, rating, platforms, image, genres } = input
+    if (name && description && released && rating && image && platforms.length && genres.length) {
+      
       if (typeof input.image === "string") {
         const ima = input.image.slice(0, 5);
-
+        
         if (input.genres.length > 4) return alert("Máximo 4 generos")
         
         if (ima !== "https") {
           return alert("La imagen debe ser https")
-
-
-
+          
+          
+          
         } else {
-
-
-          // console.log(input)
+          
+          
+     
           dispatch(postVideoGame(input))
+          dispatch(getVideoGames()) 
+          dispatch(getGeneros())
           alert("Video Games creado con exito")
           setInput({
-
+            
             name: "",
             description: "",
             released: "",
@@ -63,60 +68,74 @@ export default function CreateVideo() {
             platforms: [],
             image: "",
             genres: [],
+            
+            
+          })  
+          
+           setmensaje(true)
 
+// setTimeout(()=>{
+//   
+//   history.push("/home")
 
-          })
-          history.push("./home")
-        }
-      }
+// }, 12000) */
+
+          setTimeout(()=>{
+            setmensaje(false)
+            history.push("/home")
+
+          }, 15000)
+        }  
+      }  
     } else {
       return alert("falta completar campos")
-    }
-
-  }
-
-
-
-
+    }  
+    
+  }  
+  
+  
+  
+  
   function handleChange(e) {
     setInput({
       ...input,
       [e.target.name]: e.target.value
-    })
-  } console.log(input, "input")
-
-
+    })  
+  } console.log(input, "input")  
+  
+  
   function handleCheck(e) {
     if (e.target.checked) {
       setInput({
         ...input,
         platforms: [...input.platforms, e.target.value]
-      })
-    }
-  }
-
+      })  
+    }  
+  }  
+  
   function handleSelecGenero(e) {
     // if(!input.genres.includes(e.target.value)) 
     setInput({
       ...input,
       genres: [...input.genres, e.target.value]
-    })
-  }
-
+    })  
+  }  
+  
   function handleDelete(e) {
     setInput({
       ...input,
       genres: input.genres.filter(gen => gen !== e)
-
-    })
-  }
+      
+    })  
+  }  
+  
+  
+  
   useEffect(() => {
     dispatch(getGeneros())
+  
   }, [dispatch])
-
-
-
-
+  
 
 
 
@@ -125,6 +144,7 @@ export default function CreateVideo() {
   return (
 
     <div className='contenedores1'>
+     {mensaje&&<div><h1>Seras redireccionado en 15 segundos</h1></div>} 
       <h2>¡Crea tu Video Games!</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
@@ -209,8 +229,8 @@ export default function CreateVideo() {
           </select>
         </div>
         <div className='volver'>
-          <h6 type="submit"><button>Crear Video Games</button></h6>
-          <Link to="/home"><button>  Volver </button></Link>
+          <h6><button type="submit" >Crear Video Games</button></h6>
+         <h1>---------------------------------</h1>
 
 
         </div>

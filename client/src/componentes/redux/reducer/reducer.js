@@ -5,6 +5,7 @@ const initialState={
     Generos:[],
     Videogames2: [],
     Detail: [],
+    
 
 
 }
@@ -13,7 +14,9 @@ const initialState={
 
 function rootReducer(state=initialState, action){
     switch(action.type){
+        
         case "GET_VIDEOGAMES":
+            // console.log(action.payload,"payloaaad")
           return{
              ...state,
              Videogames: action.payload,
@@ -42,6 +45,16 @@ function rootReducer(state=initialState, action){
                           Detail: action.payload
                       }
 
+                    
+
+                   
+                    //   case "BORRAR_DETAIL":
+                    //     return{
+                    //         ...state,
+                    //         Detail: []
+                    //     }
+
+
                   case "POST_VIDEO":
                       return{
                           ...state
@@ -64,6 +77,7 @@ function rootReducer(state=initialState, action){
                     ...state,
                     Videogames: filterGenero,
               
+
                 }
 
                
@@ -74,10 +88,14 @@ function rootReducer(state=initialState, action){
                 case "FILTER_BY_CREADOS":
                     const todosVideoGame2=state.Videogames2
                     const filterCreado= action.payload === "creados"? todosVideoGame2.filter(e=>e.createdInDb) : todosVideoGame2.filter(e=> !e.createdInDb)
+                    
 
+                    // console.log(filterCreado, "filter")
+                    // console.log(todosVideoGame2, "todoVideo2")
                     return{
                         ...state,
-                     Videogames: action.payload === "todos" ? state.Videogames2: filterCreado,
+                        Videogames: action.payload === "todos" ? state.Videogames2: filterCreado,
+                        // Cache: state.Filtrado
                     }
 
                     //ORDENAMIENTOS

@@ -14,6 +14,7 @@ export default function Detail() {
 
     useEffect(()=> {
         dispatch(getDetail(id))
+        // dispatch(borrarDetail())
     
     },[dispatch,id])
 
@@ -26,7 +27,7 @@ function stripHtml(html){
     
 
     return (
-        <div>
+        
         <div>
        {miVideoGame?.length > 0?
        <div>
@@ -56,7 +57,7 @@ function stripHtml(html){
             <h4>Cargando</h4> 
         </div>
        }
-   </div>
+ 
    </div>
 )
 }

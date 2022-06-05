@@ -42,3 +42,22 @@
   padding: 1em 1.5em;
   transition: all 300ms;
 }
+
+.pagButton:focus{
+    background-color:#03e9f4;
+    color: blue;
+}
+
+
+
+/* // setmensaje(true)
+
+// setTimeout(()=>{
+//   setmensaje(false)
+//   history.push("/home")
+
+// }, 12000) */
+
+/* const [mensaje, setmensaje] = useState(false) */
+
+/* {mensaje&&<div><h6>Seras redireccionado en 15 segundos</h6></div>} */

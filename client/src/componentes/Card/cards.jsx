@@ -1,33 +1,34 @@
 import React from 'react'
 import Card from './card'
 import { Link } from 'react-router-dom'
-import {useDispatch,useSelector} from "react-redux"
-import { useEffect } from 'react'
-import { getVideoGames } from '../redux/action/action'
+import {useDispatch} from "react-redux"
+// import { useEffect } from 'react'
+// import { getVideoGames } from '../redux/action/action'
 
 
 
-export default function Cards({actualVideo}) {
- const dispatch = useDispatch()
+export default function Cards({actualVideo, errorPag,errorPag2}) {
+//  const dispatch = useDispatch()
 
- const todoVideo = useSelector(state => state.Videogames)
+//  const todoVideo = useSelector(state => state.Videogames)
 
-const noHayVideo= todoVideo.includes("Video juego no encontrado")
+// const noHayVideo= todoVideo.includes("Video juego no encontrado")
 
-const noHayGenero=todoVideo.includes("No se encuentra genero")
+// const noHayGenero=todoVideo.includes("No se encuentra genero")
 
 
- useEffect(() => {
-     dispatch(getVideoGames())
+//  useEffect(() => {
+//      dispatch(getVideoGames())
      
- }, [dispatch])
+//  }, [dispatch])
 
 
   return (
     <div className='conteiner'>
   
-      {!noHayGenero?
-      !noHayVideo?
+      {!errorPag2?
+      !errorPag?
+      
       actualVideo?.length?
       actualVideo?.map((e,i)=>
       <Link to={"/videogame/"+ e.id}>
