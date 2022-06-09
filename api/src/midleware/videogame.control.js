@@ -9,21 +9,21 @@ const {API_KEY}= process.env
 //TRAIGO INFO API
 async function getInfoApi(){
 
-     const videogamePage1= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=1`)
-    //  const videogamePage2= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=2`)
-    //  const videogamePage3= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=3`)
-    //  const videogamePage4= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=4`)
-    //  const videogamePage5= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=5`)
+    //  const videogamePage1= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=1`)
+     const videogamePage2= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=2`)
+     const videogamePage3= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=3`)
+     const videogamePage4= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=4`)
+     const videogamePage5= await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=5`)
 
 
-    const video = videogamePage1.data.results;
-    //  const video1 = videogamePage1.data.results;
-    //  const video2 = videogamePage2.data.results;
-    //  const video3 = videogamePage3.data.results;
-    //  const video4 = videogamePage4.data.results;
-    //  const video5 = videogamePage5.data.results;
+    // const video = videogamePage1.data.results;
+     const video1 = videogamePage1.data.results;
+     const video2 = videogamePage2.data.results;
+     const video3 = videogamePage3.data.results;
+     const video4 = videogamePage4.data.results;
+     const video5 = videogamePage5.data.results;
    
-    // const video=[...video1, ...video2, ...video3, ...video4, ...video5]
+    const video=[...video1, ...video2, ...video3, ...video4, ...video5]
     // const video=[...video1, ...video2]
    
      
