@@ -10,9 +10,9 @@
     }
 
 ::placeholder{
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 13px;
-  color: white ;
+  color: #03e9f4 ;
 }
     .searchInput ul button{
         margin-left: 300px;

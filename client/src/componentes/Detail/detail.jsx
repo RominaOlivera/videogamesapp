@@ -1,8 +1,9 @@
 import React from 'react'
-import { getDetail } from '../redux/action/action'
+import { getDetail} from '../redux/action/action'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+
 
 export default function Detail() {
 
@@ -14,7 +15,8 @@ export default function Detail() {
 
     useEffect(()=> {
         dispatch(getDetail(id))
-        // dispatch(borrarDetail())
+      
+     
     
     },[dispatch,id])
 

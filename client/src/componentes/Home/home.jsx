@@ -15,9 +15,6 @@ function Home() {
 
 const dispatch = useDispatch()
 const todoVideo = useSelector(state => state.Videogames)
-// console.log(todoVideo,"estado")
-
-
 
 
 //ME TRAIGO LOS GENEROS ORDENADOS
@@ -32,9 +29,13 @@ const indexPrimerVideo = indexUltimoVideo - videoPorPagina
 
 const actualVideo=todoVideo.slice(indexPrimerVideo, indexUltimoVideo)
 
+
 const [orden, setorden] = useState("")
+console.log(orden, "orden")
 
 
+
+//ERRORES SIN GENEROS Y SIN COINCIDENCIA EN EL NOMBRE
 const errorPag= todoVideo.includes("Video juego no encontrado")
 const errorPag2=todoVideo.includes("No se encuentra genero")
 
@@ -43,9 +44,6 @@ const errorPag2=todoVideo.includes("No se encuentra genero")
 const paginado =(numeroPagina)=>{
   setpaginaActual(numeroPagina)
 }
-
-
-
 
 
 useEffect(()=>{
@@ -90,6 +88,9 @@ function handleOrdenPorRating(e){
 
 
 
+
+
+
   return (
       <div className='contenedores'>
 
@@ -111,13 +112,14 @@ function handleOrdenPorRating(e){
               <option value="desc">Z-A</option>
               </select>
 
-
+              
         
               <select className='selectores' onChange={e=> handleOrdenPorRating(e)}>
               <option value="rating+">Mayor rating</option>
               <option value="rating-">Menor rating</option>
               </select>
-
+               
+          
 
          
               <select className='selectores' onChange={e=> handleFilterCreado(e)}>
@@ -126,7 +128,8 @@ function handleOrdenPorRating(e){
               <option value="api">Existentes</option>
               <option value="creados">Creados</option>
               </select>
-             
+
+            
            
              
            

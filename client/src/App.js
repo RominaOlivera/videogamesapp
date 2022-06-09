@@ -9,6 +9,9 @@ import detail from './componentes/Detail/detail';
 
 
 
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +22,9 @@ function App() {
        <Route path={"/home"} component={home}/>
        <Route path={"/create"} component={createVideo}/>
        <Route path ={'/videogame/:id'} component = {detail}/>
+ 
+      
+      
       
        </Switch> 
 

@@ -10,6 +10,13 @@ export default function CreateVideo() {
   const dispatch = useDispatch()
   const history = useHistory()
   const todoGeneros = useSelector(state => state.Generos)
+
+
+
+
+
+
+//ESPERA
  const [mensaje, setmensaje] = useState(false) 
 
  
@@ -23,14 +30,15 @@ export default function CreateVideo() {
     platforms: [],
     image: "",
     genres: [],
-    createdInDb: true
+    createdInDb: true,
+    
+    
 
 
   })
 
+ 
   const platforms = ['PC', 'PlayStation 5', 'Xbox One', 'PlayStation 4', 'Xbox Series S/X', 'Nintendo Switch', 'iOS', 'Android', 'Nintendo 3DS', 'Nintendo DS', 'Nintendo DSi', 'macOS'];
-
-  
   
   
   
@@ -41,9 +49,12 @@ export default function CreateVideo() {
     const { name, description, released, rating, platforms, image, genres } = input
     if (name && description && released && rating && image && platforms.length && genres.length) {
       
+
+
       if (typeof input.image === "string") {
         const ima = input.image.slice(0, 5);
         
+        if(!input.rating||input.rating<0||input.rating>5) return alert("el rating debe ser entre el 0 y 5")
         if (input.genres.length > 4) return alert("Máximo 4 generos")
         
         if (ima !== "https") {
@@ -68,23 +79,18 @@ export default function CreateVideo() {
             platforms: [],
             image: "",
             genres: [],
+          
             
             
           })  
           
-           setmensaje(true)
-
-// setTimeout(()=>{
-//   
-//   history.push("/home")
-
-// }, 12000) */
+          setmensaje(true)
 
           setTimeout(()=>{
             setmensaje(false)
             history.push("/home")
 
-          }, 15000)
+          }, 50000)
         }  
       }  
     } else {
@@ -102,6 +108,7 @@ export default function CreateVideo() {
       [e.target.name]: e.target.value
     })  
   } console.log(input, "input")  
+
   
   
   function handleCheck(e) {
@@ -114,12 +121,14 @@ export default function CreateVideo() {
   }  
   
   function handleSelecGenero(e) {
-    // if(!input.genres.includes(e.target.value)) 
     setInput({
       ...input,
       genres: [...input.genres, e.target.value]
     })  
   }  
+
+ 
+
   
   function handleDelete(e) {
     setInput({
@@ -144,7 +153,7 @@ export default function CreateVideo() {
   return (
 
     <div className='contenedores1'>
-     {mensaje&&<div><h1>Seras redireccionado en 15 segundos</h1></div>} 
+     {mensaje&&<div><h1>Seras redireccionado en unos segundos</h1></div>} 
       <h2>¡Crea tu Video Games!</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
@@ -152,6 +161,7 @@ export default function CreateVideo() {
           <input
             className='nombre'
             type="text"
+            placeholder='Nombre'
             value={input.name}
             name="name"
             onChange={(e) => handleChange(e)} />
@@ -162,6 +172,7 @@ export default function CreateVideo() {
           <input
             className='nombre'
             type="text"
+            placeholder='Escribe una descripcion'
             value={input.description}
             name="description"
             onChange={(e) => handleChange(e)} />
@@ -179,6 +190,7 @@ export default function CreateVideo() {
 
         </div>
 
+
         <div>
           <label>Rating:</label>
           <input
@@ -187,8 +199,8 @@ export default function CreateVideo() {
             value={input.rating}
             name="rating"
             step="0.01"
-            min="0"
-            max="5"
+            // min="0"
+            // max="5"
             onChange={(e) => handleChange(e)} />
 
         </div>
@@ -198,6 +210,7 @@ export default function CreateVideo() {
           <input
             className='nombre'
             type="text"
+            placeholder='Ingresa una imagen https'
             value={input.image}
             name="image"
             onChange={(e) => handleChange(e)} />
@@ -214,9 +227,9 @@ export default function CreateVideo() {
             <h4>{p}</h4>
           </div>))}
 
+      
 
-
-
+      
 
         <div className='genero'>
           <select onChange={(e) => handleSelecGenero(e)}>
@@ -228,8 +241,11 @@ export default function CreateVideo() {
             ))}
           </select>
         </div>
+
+
+
         <div className='volver'>
-          <h6><button type="submit" >Crear Video Games</button></h6>
+          <button type="submit">Crear Video Games</button>
          <h1>---------------------------------</h1>
 
 

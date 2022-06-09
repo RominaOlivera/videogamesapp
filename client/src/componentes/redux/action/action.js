@@ -12,6 +12,11 @@ export function getVideoGames(){
     }
 }
 
+
+
+
+
+
 export function getGeneros(){
     return async function(dispatch){
         var json= await axios (`${process.env.REACT_APP_VIDEOGAMES}/genres`)
@@ -51,17 +56,15 @@ export function getDetail(id){
 
 
 
-export function postVideoGame(payload){
 
+
+export function postVideoGame(payload){
+    
     return async function(dispatch){
         var respuesta= await axios.post(`${process.env.REACT_APP_VIDEOGAMES}/videogame`, payload);
         return respuesta
-}
+    }
 }           
-
-
-
-
 
 
 
@@ -82,16 +85,10 @@ export function filterVideoByCreados(payload){
 }
 
 
-// export function borrarDetail(payload){
-//     return{
-//         type: "BORRAR_DETAIL",
-//         payload
-//     }
-// }
 
 
 export function OrdenPorNombres(payload){
-    console.log(payload, "payload")
+
     return{
         type: "ORDEN_POR_NOMBRE",
         payload
@@ -100,11 +97,9 @@ export function OrdenPorNombres(payload){
 
 
 export function OrdenPorRating(payload){
-    // console.log(payload, "payload")
     return{
         type: "ORDEN_POR_RATING",
         payload
     }
 }
-
 

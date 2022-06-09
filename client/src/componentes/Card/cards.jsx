@@ -1,26 +1,9 @@
 import React from 'react'
 import Card from './card'
 import { Link } from 'react-router-dom'
-import {useDispatch} from "react-redux"
-// import { useEffect } from 'react'
-// import { getVideoGames } from '../redux/action/action'
-
 
 
 export default function Cards({actualVideo, errorPag,errorPag2}) {
-//  const dispatch = useDispatch()
-
-//  const todoVideo = useSelector(state => state.Videogames)
-
-// const noHayVideo= todoVideo.includes("Video juego no encontrado")
-
-// const noHayGenero=todoVideo.includes("No se encuentra genero")
-
-
-//  useEffect(() => {
-//      dispatch(getVideoGames())
-     
-//  }, [dispatch])
 
 
   return (
@@ -30,10 +13,10 @@ export default function Cards({actualVideo, errorPag,errorPag2}) {
       !errorPag?
       
       actualVideo?.length?
-      actualVideo?.map((e,i)=>
+      actualVideo?.map((e)=>
       <Link to={"/videogame/"+ e.id}>
       
-        <Card  key={i} name={e.name} image={e.image} genres={e.genres}/>
+        <Card  name={e.name} image={e.image} genres={e.genres}/>
         </Link>
         
       ):

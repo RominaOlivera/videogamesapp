@@ -38,6 +38,11 @@ label{
 input{
      width: 200px;
      font-size: 1.1em;
+     background-color: transparent;
+     border: 2px solid #03e9f4;
+     outline: none;
+     border-radius: 5px;
+     color: white;
 }
 
 
@@ -74,3 +79,10 @@ font-size: 1em;
     margin-top: 10px;
   
 }
+
+
+::placeholder{
+   
+    font-size: 13px;
+    color: #03e9f4 ;
+  }

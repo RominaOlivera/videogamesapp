@@ -10,9 +10,11 @@ function card({name, image, genres}) {
            <h2>{name}</h2>
            <img src={image} alt="imgen video games"/>
            <div className="contenido">
-            {genres?.length&& genres.map(e=> <h3>{e.name}</h3>)}
-
-            </div>
+            {genres?.length&& genres.map(e=> <h3>{e.name}</h3>)}</div>
+       
+        
+         
+          
           </div>
        </div>
     

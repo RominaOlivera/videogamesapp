@@ -33,6 +33,9 @@ export default function NavBar({refresc}) {
                  
                    <ul>
                    <Link to="/create"><button>Crea tu video games</button></Link>
+                
+                  
+                  
                    </ul>
                    </div>  
                    </header>           
